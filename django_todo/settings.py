@@ -11,15 +11,15 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 
-import os 
+import os
 from pathlib import Path
 
 
 if os.path.exists("env.py"):
-    import env
+    import env # noqa
 
 
-SECRET_KEY = os.environ.get('SECRET_KEY', 'any_secret_key_1')
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
