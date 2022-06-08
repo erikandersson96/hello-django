@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 
 import os
+import dj_database_url
 from pathlib import Path
 if os.path.exists("env.py"):
     import env # noqa
@@ -79,13 +80,16 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
+DATABASES = {
+    'default': dj_database_url.parse('postgres://qeipevmdspxgct:af8855a78eed74f6f94fa78b5bd097bc29eb01ebf26754383ad97f35ab94a4ac@ec2-44-196-174-238.compute-1.amazonaws.com:5432/dagg20muufpdla')
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
