@@ -18,7 +18,7 @@ if os.path.exists("env.py"):
     import env # noqa
 
 
-development = os.environ.get('DEVELOPMENT', False)
+development = os.environ.get('DEVELOPMENT', True)
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
